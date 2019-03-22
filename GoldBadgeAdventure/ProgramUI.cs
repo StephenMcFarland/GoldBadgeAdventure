@@ -8,7 +8,8 @@ namespace GoldBadgeAdventure
 {
     public class ProgramUI
     {
-        StoryRepository _storyRepo = new StoryRepository();
+        private static StoryRepository _storyRepo = new StoryRepository();
+        private static Story story = new Story();
 
         int Life = 50;
         int ProjectedSalary = 23;
@@ -22,6 +23,7 @@ namespace GoldBadgeAdventure
                 if (Life > 99)
                 {
                     Console.WriteLine($"Congrats You Lived Through Eleven Fifty! You're on your way to a great projected salary of ${ProjectedSalary},000");
+                    Console.ReadLine();
                 }
                 else if (Life > 25 && Life < 99)
                 {
@@ -31,6 +33,7 @@ namespace GoldBadgeAdventure
                 else
                 {
                     Console.WriteLine("You Should Look into the Other 1150... Per Base Appointment!");
+                    Console.ReadLine();
                 }
 
             }
@@ -67,7 +70,9 @@ namespace GoldBadgeAdventure
                     case 6:
                         MenuOptionSix();
                         break;
-
+                    case 7:
+                        //running = false;
+                        break;
                 }
             }
 
@@ -93,8 +98,7 @@ namespace GoldBadgeAdventure
                 case 6:
                     MenuSix();
                     break;
-
-            }
+                   }
         }
         private void MenuOptionOne()
         {
@@ -134,12 +138,12 @@ namespace GoldBadgeAdventure
             switch (snack)
             {
                 case 1:
-                    _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(4, 10, true);
+                    Life = _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(Life, 4, 10, true);
                     Console.WriteLine($"Good Choice Energy and Cognitive Ability Increase.\n" +
                         $"Life: {Life}\n");
                     break;
                 case 2:
-                    _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(4, 10, false);
+                    Life = _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(Life, 4, 10, false);
                     Console.WriteLine($"Terrible Choice, Energy and Cognitive Ability Decrease.\n" +
                         $"Life: {Life}\n");
                     break;
@@ -147,14 +151,14 @@ namespace GoldBadgeAdventure
                     int number = rnd.Next(1, 3);
                     if (number == 1)
                     {
-                        _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(1, 25, true);
+                        Life = _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(Life, 1, 25, true);
                         Console.WriteLine($"Good Choice They Brought in City BBQ.\n" +
                             $"Life: {Life}\n");
 
                     }
                     else
                     {
-                        _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(7, 25, false);
+                        Life = _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(Life, 7, 25, false);
                         Console.WriteLine($"Bad Choice They Brought in Left Over Pork Fried Rice.\n" +
                             $"Life: {Life}\n");
 
