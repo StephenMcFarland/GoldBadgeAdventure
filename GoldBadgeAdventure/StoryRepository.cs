@@ -10,7 +10,7 @@ namespace GoldBadgeAdventure
     {
 
         public int Life = new int();
-
+        
         public int MakeRandomNumberAndIncreaseOrDecreaseLife(int first, int second, bool increaseOrDecrease)
         {
             Random rnd = new Random();

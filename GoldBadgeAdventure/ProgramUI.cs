@@ -11,7 +11,7 @@ namespace GoldBadgeAdventure
         StoryRepository _storyRepo = new StoryRepository();
 
         int Life = 50;
-        int ProjectSalary = 23;
+        int ProjectedSalary = 23;
 
 
         public void Run()
@@ -21,7 +21,7 @@ namespace GoldBadgeAdventure
             {
                 if (Life > 99)
                 {
-                    Console.WriteLine("Congrat You Lived Through Eleven Fifty");
+                    Console.WriteLine($"Congrats You Lived Through Eleven Fifty! You're on your way to a great projected salary of ${ProjectedSalary},000");
                 }
                 else if (Life > 25 && Life < 99)
                 {
@@ -126,37 +126,37 @@ namespace GoldBadgeAdventure
             Random rnd = new Random();
 
             Console.WriteLine("What Snack Would you Like?\n" +
-                "1.Your Choice of \"Fresh\" Fruit." +
-                "2. Your Choice of a Delicious Crunch." +
-                "3. You decide to Eat a Classmate Snack.");
+                "1. Your Choice of \"Fresh\" Fruit.\n" +
+                "2. Your Choice of a Delicious Crunch.\n" +
+                "3. You decide to Eat a Classmate's Snack.\n");
             int snack = int.Parse(Console.ReadLine());
 
             switch (snack)
             {
                 case 1:
                     _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(4, 10, true);
-                    Console.WriteLine($"Good Choice Energy and Cognitive Ability Increase by 8 points.\n" +
-                        $"Life: {Life}");
+                    Console.WriteLine($"Good Choice Energy and Cognitive Ability Increase.\n" +
+                        $"Life: {Life}\n");
                     break;
                 case 2:
                     _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(4, 10, false);
-                    Console.WriteLine($"Terrible Choice Energy and Cognitive Ability Decrease by 4 points.\n" +
-                        $"Life: {Life}");
+                    Console.WriteLine($"Terrible Choice, Energy and Cognitive Ability Decrease.\n" +
+                        $"Life: {Life}\n");
                     break;
                 case 3:
                     int number = rnd.Next(1, 3);
                     if (number == 1)
                     {
                         _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(1, 25, true);
-                        Console.WriteLine($"Good Choice They Brought in City BBQ." +
-                            $"Life: {Life}");
+                        Console.WriteLine($"Good Choice They Brought in City BBQ.\n" +
+                            $"Life: {Life}\n");
 
                     }
                     else
                     {
                         _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(7, 25, false);
-                        Console.WriteLine($"Bad Choice They Brought in Left Over Pork Fried Rice." +
-                            $"Life: {Life}");
+                        Console.WriteLine($"Bad Choice They Brought in Left Over Pork Fried Rice.\n" +
+                            $"Life: {Life}\n");
 
                     }
                     break;
