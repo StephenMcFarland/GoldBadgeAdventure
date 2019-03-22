@@ -138,6 +138,7 @@ namespace GoldBadgeAdventure
             switch (snack)
             {
                 case 1:
+                    ProjectedSalary += 1;
                     Life = _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(Life, 4, 10, true);
                     Console.WriteLine($"Good Choice Energy and Cognitive Ability Increase.\n" +
                         $"Life: {Life}\n");
@@ -151,6 +152,7 @@ namespace GoldBadgeAdventure
                     int number = rnd.Next(1, 3);
                     if (number == 1)
                     {
+                        ProjectedSalary += 2;
                         Life = _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(Life, 1, 25, true);
                         Console.WriteLine($"Good Choice They Brought in City BBQ.\n" +
                             $"Life: {Life}\n");
@@ -158,6 +160,7 @@ namespace GoldBadgeAdventure
                     }
                     else
                     {
+                        ProjectedSalary -= 1;
                         Life = _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(Life, 7, 25, false);
                         Console.WriteLine($"Bad Choice They Brought in Left Over Pork Fried Rice.\n" +
                             $"Life: {Life}\n");
@@ -170,8 +173,52 @@ namespace GoldBadgeAdventure
         }
         private void MenuTwo()
         {
+            Console.WriteLine("Which project are you ready to tackle?\n" +
+                "1. CSS Creature\n" +
+                "2. Portfolio project\n" +
+                "3. Static store front\n"+
+                "4. Business challenges\n");
+            int snack = int.Parse(Console.ReadLine());
+
+            switch (snack)
+            {
+                case 1:
+                    MenuTwoOne();
+                    break;
+                case 2:
+                    MenuTwoTwo();
+                    break;
+                case 3:
+                    MenuTwoThree();
+                    break;
+                case 4:
+                    MenuTwoFour();
+                    break;
+            }
+
 
         }
+
+        private void MenuTwoFour()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MenuTwoThree()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MenuTwoTwo()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MenuTwoOne()
+        {
+            throw new NotImplementedException();
+        }
+
         private void MenuThree()
         {
 
