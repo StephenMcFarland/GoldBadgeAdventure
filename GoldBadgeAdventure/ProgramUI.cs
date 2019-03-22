@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeerProgramAdventure
+namespace GoldBadgeAdventure
 {
     public class ProgramUI
     {
         StoryRepository _storyRepo = new StoryRepository();
 
-        int life = 50;
-        int projectSalary = 23;
+        int Life = 50;
+        int ProjectSalary = 23;
 
 
         public void Run()
@@ -19,11 +19,11 @@ namespace PeerProgramAdventure
             bool running = true;
             while (running)
             {
-                if (life > 99)
+                if (Life > 99)
                 {
                     Console.WriteLine("Congrat You Lived Through Eleven Fifty");
                 }
-                else if (life > 25 && life < 99)
+                else if (Life > 25 && Life < 99)
                 {
                     Menu();
 
@@ -134,31 +134,29 @@ namespace PeerProgramAdventure
             switch (snack)
             {
                 case 1:
-                    life += 8;
+                    _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(4, 10, true);
                     Console.WriteLine($"Good Choice Energy and Cognitive Ability Increase by 8 points.\n" +
-                        $"Life: {life}");
+                        $"Life: {Life}");
                     break;
                 case 2:
-                    life -= 4;
+                    _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(4, 10, false);
                     Console.WriteLine($"Terrible Choice Energy and Cognitive Ability Decrease by 4 points.\n" +
-                        $"Life: {life}");
+                        $"Life: {Life}");
                     break;
                 case 3:
-                    int increase = _storyRepo.MakeRandomNumber(1, 25);
-
                     int number = rnd.Next(1, 3);
                     if (number == 1)
                     {
-                        life += increase;
+                        _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(1, 25, true);
                         Console.WriteLine($"Good Choice They Brought in City BBQ." +
-                            $"Life: {life}");
+                            $"Life: {Life}");
 
                     }
                     else
                     {
-                        life -= increase;
+                        _storyRepo.MakeRandomNumberAndIncreaseOrDecreaseLife(7, 25, false);
                         Console.WriteLine($"Bad Choice They Brought in Left Over Pork Fried Rice." +
-                            $"Life: {life}");
+                            $"Life: {Life}");
 
                     }
                     break;
@@ -189,4 +187,4 @@ namespace PeerProgramAdventure
 
     }
 }
-}
+
