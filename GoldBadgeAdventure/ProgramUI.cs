@@ -44,9 +44,9 @@ namespace GoldBadgeAdventure
             
             Console.WriteLine("Welcome To Your Day At Eleven Fifty.\n" +
                     "Choose The Beginning of Your Fate:\n");
-            for (int i = 1; i < 4; i++)
+            for (int i = 1; i < 6; i+=2)
             {
-                int rand = rnd.Next(i, i+4);
+                int rand = rnd.Next(i, i+2);
 
                 switch (rand)
                 {
